@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker - Neon Cyberpunk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="container">
+        <header class="header">
+            <h1 class="glitch" data-text="EXPENSE TRACKER">EXPENSE TRACKER</h1>
+            <div class="subtitle">Track your finances in style</div>
+        </header>
+
+        <!-- Balance Cards -->
+        <div class="stats-grid">
+            <div class="stat-card balance-card">
+                <div class="card-glow"></div>
+                <div class="stat-icon">💰</div>
+                <div class="stat-label">Balance</div>
+                <div class="stat-value" id="balanceAmount">$0.00</div>
+            </div>
+            
+            <div class="stat-card income-card">
+                <div class="card-glow"></div>
+                <div class="stat-icon">📈</div>
+                <div class="stat-label">Income</div>
+                <div class="stat-value income" id="incomeAmount">$0.00</div>
+            </div>
+            
+            <div class="stat-card expense-card">
+                <div class="card-glow"></div>
+                <div class="stat-icon">📉</div>
+                <div class="stat-label">Expenses</div>
+                <div class="stat-value expense" id="expenseAmount">$0.00</div>
+            </div>
+        </div>
+
+        <!-- Add Transaction Form -->
+        <div class="form-container">
+            <h2 class="section-title">Add Transaction</h2>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label for="description">Description</label>
+                    <input type="text" id="description" placeholder="Enter description..." />
+                    <div class="input-border"></div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" step="0.01" placeholder="0.00" />
+                    <div class="input-border"></div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="category">Category</label>
+                    <select id="category">
+                        <option value="food">🍔 Food</option>
+                        <option value="transport">🚗 Transport</option>
+                        <option value="entertainment">🎮 Entertainment</option>
+                        <option value="utilities">⚡ Utilities</option>
+                        <option value="shopping">🛍️ Shopping</option>
+                        <option value="health">💊 Health</option>
+                        <option value="other">📌 Other</option>
+                    </select>
+                    <div class="input-border"></div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="type">Type</label>
+                    <select id="type">
+                        <option value="expense">Expense</option>
+                        <option value="income">Income</option>
+                    </select>
+                    <div class="input-border"></div>
+                </div>
+            </div>
+            
+            <button class="btn-add" id="addBtn">
+                <span class="btn-text">Add Transaction</span>
+                <span class="btn-icon">+</span>
+            </button>
+        </div>
+
+        <!-- Transaction History -->
+        <div class="history-container">
+            <h2 class="section-title">Transaction History</h2>
+            <div id="transactionList" class="transaction-list">
+                <div class="empty-state">
+                    <div class="empty-icon">📊</div>
+                    <p>No transactions yet</p>
+                    <p class="empty-subtext">Start tracking your finances above</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
